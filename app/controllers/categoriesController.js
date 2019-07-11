@@ -33,7 +33,7 @@ router.get('/:id',(req,res)=>{
     .then((response)=>{
         res.json({
             category:response[0],
-            notes:response[1]
+            notes:response[1]   // response = [{} []]
         })
     })
     .catch((err)=>{

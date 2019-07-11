@@ -64,7 +64,7 @@ class App extends React.Component{
           )}
         </ul>
       
-        <Switch>
+        
           {/* logged out routes */}
         {!this.state.isAuthenticated && (
           <div>
@@ -77,6 +77,7 @@ class App extends React.Component{
         {/* <logged in router */}
         {this.state.isAuthenticated &&(
         <div>
+        <Switch>
         <Route path="/users/account" component={NotesAccount} exact/>
         <Route path="/notes" component={NotesList} exact={true}/>
         <Route path="/notes/new" component={NotesNew}/>
@@ -88,13 +89,11 @@ class App extends React.Component{
         <Route path="/categories" component={CategoriesList}/> 
         <Route path="/users/logout" render={(props)=>{
         return <NotesLogout {...props} handleAuth={this.handleAuth}/> }} exact={false}/>
+        </Switch>
           </div>
         )}
-        
-        </Switch>
-
-
-      </div>
+      
+       </div>
       </BrowserRouter>
     )
   } 

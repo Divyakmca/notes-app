@@ -5,7 +5,7 @@ class NotesLogout extends React.Component{
     
     componentDidMount(){
         console.log('am in logout')
-        axios.delete(`/users/logout`,{
+        axios.delete('/users/logout',{
         headers:{
             'x-auth':localStorage.getItem('userAuthToken')
         }
@@ -15,6 +15,7 @@ class NotesLogout extends React.Component{
             console.log(response.data)
             this.props.handleAuth(false)
             this.props.history.push('/users/login')
+            
         })
     }
     render(){
